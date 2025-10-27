@@ -1,17 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-interface Post {
-    id: string;
-    title: string;
-    author: string;
-    date: string;
-    content: string;
-    imageUrl: string;
-    category: string;
-    featured: boolean;
-}
-
-const parseCSV = (text: string): Post[] => {
+const parseCSV = (text) => {
     const lines = text.trim().split('\n');
     const headers = lines[0].split(',');
     return lines.slice(1).map(line => {
@@ -24,19 +13,19 @@ const parseCSV = (text: string): Post[] => {
                 obj[header] = value;
             }
             return obj;
-        }, {} as any);
-        return post as Post;
+        }, {});
+        return post;
     });
 };
 
-const categoryColors: { [key: string]: string } = {
+const categoryColors = {
     "Featured": "bg-gray-800 text-white",
     "SEO": "bg-blue-600 text-white",
     "Info Menarik": "bg-cyan-500 text-white",
     "Tips": "bg-emerald-500 text-white",
 };
 
-const FeaturedPostCard: React.FC<{ post: Post }> = ({ post }) => (
+const FeaturedPostCard = ({ post }) => (
     <div className="bg-white rounded-xl shadow-sm overflow-hidden border border-gray-200 mb-8">
         <div className="md:h-80 bg-teal-400 flex items-center justify-center overflow-hidden">
              <img src="https://i.imgur.com/8L3jJ8p.png" alt="Investment Illustration" className="object-contain h-full w-auto" />
@@ -55,7 +44,7 @@ const FeaturedPostCard: React.FC<{ post: Post }> = ({ post }) => (
     </div>
 );
 
-const PostCard: React.FC<{ post: Post }> = ({ post }) => (
+const PostCard = ({ post }) => (
     <div className="bg-white rounded-xl shadow-sm overflow-hidden border border-gray-200 h-full flex flex-col">
         <div className={`${post.category === 'SEO' ? 'bg-blue-900' : 'bg-blue-500'} h-40 flex items-center justify-center p-4`}>
              <img src={post.category === 'SEO' ? "https://i.imgur.com/So3do2C.png" : "https://i.imgur.com/uFp31de.png"} alt="Post Illustration" className="object-contain h-full w-auto" />
@@ -68,8 +57,8 @@ const PostCard: React.FC<{ post: Post }> = ({ post }) => (
     </div>
 );
 
-const Blog: React.FC = () => {
-    const [posts, setPosts] = useState<Post[]>([]);
+const Blog = () => {
+    const [posts, setPosts] = useState([]);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {

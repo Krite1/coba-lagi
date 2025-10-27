@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import MenuIcon from './icons/MenuIcon';
-import XIcon from './icons/XIcon';
+import MenuIcon from './icons/MenuIcon.jsx';
+import XIcon from './icons/XIcon.jsx';
 
 // Simple SVG icons for demonstration
 const MailIcon = () => (
@@ -26,7 +26,7 @@ const ChevronDownIcon = () => (
 );
 
 
-const Header: React.FC = () => {
+const Header = () => {
     const [isOpen, setIsOpen] = useState(false);
 
     const navLinks = ["About", "Lainnya", "Tools", "AdSense", "Guest", "SEO", "Snippet", "Tips Blogger"];

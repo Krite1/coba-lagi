@@ -1,6 +1,6 @@
 import React from 'react';
 
-const AdWidget: React.FC = () => (
+const AdWidget = () => (
     <div className="bg-white rounded-xl shadow-sm overflow-hidden border border-gray-200 p-4 text-center">
         <div className="flex justify-end mb-2">
             <span className="text-xs font-semibold border border-gray-300 text-gray-500 px-2 py-1 rounded-md">Visit</span>
@@ -20,7 +20,7 @@ const AdWidget: React.FC = () => (
     </div>
 );
 
-const TrendingWidget: React.FC = () => {
+const TrendingWidget = () => {
     const trendingPosts = [
         { title: "Apa Itu EDU Backlink", imageUrl: "https://i.imgur.com/e5n1zCD.png" },
         { title: "Cara Mengatasi SIM Tidak DI-provisloming", imageUrl: "https://i.imgur.com/u3S2pAb.png" },
@@ -43,7 +43,7 @@ const TrendingWidget: React.FC = () => {
     );
 };
 
-const Sidebar: React.FC = () => {
+const Sidebar = () => {
   return (
     <aside>
       <AdWidget />

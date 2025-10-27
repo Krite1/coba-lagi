@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Hero: React.FC = () => {
+const Hero = () => {
   return null; // This component is no longer used in the new layout.
 };
 

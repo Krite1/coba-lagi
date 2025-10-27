@@ -1,9 +1,9 @@
 import React from 'react';
-import Header from './components/Header';
-import Blog from './components/Blog';
-import Sidebar from './components/Sidebar';
+import Header from './components/Header.jsx';
+import Blog from './components/Blog.jsx';
+import Sidebar from './components/Sidebar.jsx';
 
-const App: React.FC = () => {
+const App = () => {
   return (
     <div className="bg-[#FDFBF5] font-sans antialiased">
       <Header />
